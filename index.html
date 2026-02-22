@@ -91,8 +91,13 @@ setInterval(() => {
     showSlide(current);
   }
 }, 3000);
+function playMusic() {
+  document.getElementById("bgMusic").play();
+}
 </script>
-<audio autoplay loop>
+<button onclick="playMusic()">Tap for Surprise 🎵</button>
+
+<audio id="bgMusic" loop>
   <source src="assets/audio/perfect.mp3" type="audio/mpeg">
 </audio>
 </body>

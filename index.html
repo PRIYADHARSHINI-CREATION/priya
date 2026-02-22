@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday My Love ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- 🎵 Background Music -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+  <h1>Happy Birthday ❤️</h1>
+  <h2 id="mamaText">Mama</h2>
+
+  <!-- 🎂 Birthday Cake -->
+<div class="cake">
+  <div class="plate"></div>
+  <div class="layer"></div>
+  <div class="icing"></div>
+  <div class="candle">
+    <div class="flame"></div>
+  </div>
+</div>
+
+  <p class="message">
+    Every moment with you is my favorite memory.  
+    On your special day, I just want to say…  
+    You mean the world to me 💖
+  </p>
+
+<!-- 📸 Photo Slider -->
+<div class="slider">
+
+  <div class="slides">
+    <img src="photos/photo1.jpg" class="slide active">
+    <img src="photos/photo2.jpg" class="slide">
+    <img src="photos/photo3.jpg" class="slide">
+    <img src="photos/photo4.jpg" class="slide">
+    <img src="photos/photo5.jpg" class="slide">
+    <img src="photos/photo6.jpg" class="slide">
+    <img src="photos/photo7.jpg" class="slide">
+  </div>
+
+  <div class="dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+  </div>
+
+</div>
+
+  <button onclick="showLove()">Tap Here 💕</button>
+  <p id="loveText" class="hidden">
+    Forever yours… I love you endlessly ❤️✨
+  </p>
+
+<script>
+/* 💕 Love button */
+function showLove() {
+  document.getElementById("loveText").style.display = "block";
+}
+
+/* 📸 Slider */
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(index) {
+  slides.forEach(s => s.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active"));
+
+  slides[index].classList.add("active");
+  dots[index].classList.add("active");
+  current = index;
+}
+
+function goToSlide(index) {
+  showSlide(index);
+}
+
+/* auto slide */
+setInterval(() => {
+  if (slides.length > 0) {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+}, 3000);
+</script>
+<audio autoplay loop>
+  <source src="assets/audio/perfect.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html>
